@@ -36,6 +36,7 @@
 **ENG**
 
 Only binary codes are considered, polynomials with coefficients from GF(2) are used
+
 Notation
 - g(x) - generating polynomial
 - r = deg(g(x)) - degree of the generating polynomial, which determines the number of bits of the checksum in the codeword.
