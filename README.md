@@ -1,6 +1,5 @@
 # cyclic-code
 Использование циклических кодов для обнаружения ошибок в сетях передачи данных / Using cyclic codes for error detection in data networks
-Использование циклических кодов для обнаружения ошибок в сетях передачи данных / Using cyclic codes for error detection in data networks
 
 **RU**
 Рассматриваются только двоичные коды, используются многочлены с коэффициентами из GF(2)
