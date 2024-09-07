@@ -32,6 +32,7 @@
 
 
 **ENG**
+
 Only binary codes are considered, polynomials with coefficients from GF(2) are used
 Notation
 - g(x) - generating polynomial
