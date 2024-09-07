@@ -31,6 +31,7 @@
 3. Если s(x) != 0, то декодер выносит решение, что произошли ошибки (E = 1), иначе ошибок не произошло (E = 0).
 
 
+
 **ENG**
 
 Only binary codes are considered, polynomials with coefficients from GF(2) are used
