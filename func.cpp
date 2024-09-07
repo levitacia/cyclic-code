@@ -50,16 +50,16 @@ void generate_random_m(int* m, int k) {
 }
 
 int* coder(const int r, int* g_x, const int k, int* m) {
-    //создаем x^r
+    //create x^r
     int* x_r = new int[r + 1] {0};
     x_r[0] = 1;
 
-    int* cx_temp = multiply(m, x_r, k, r + 1); //считаем m(x) * x^r
+    int* cx_temp = multiply(m, x_r, k, r + 1); //count m(x) * x^r
     int size_cx = k + (r + 1) - 1;
     int degcx = size_cx - 1;
     //c(x) = m(x) * 1^r mod g(x)
 
-    //разворачиваем для корректного деления
+    //reverse for correct division
     reverse(cx_temp, size_cx);
 
     int size_ax = size_cx;
@@ -71,7 +71,7 @@ int* coder(const int r, int* g_x, const int k, int* m) {
     int* result = new int[degcx - r + 1];
     division(cx_temp, degcx, g_x, r, result);
 
-    //формируем a(x) - вектор а
+    //count a(x) - vector a
     for (int i = r - 1; i >= 0; i--) {
         ax[i] = cx_temp[i];
     }
@@ -87,7 +87,7 @@ int* coder(const int r, int* g_x, const int k, int* m) {
 
 bool decoder(int* ax, int size_ax, int size_cx, int* g_x, int r) {
     bool resu = 0;
-    //формируем веkтор ошибок
+    //create vector of errors
     int size_e = size_ax;
     int* errors = new int[size_ax] {0};
     generate_e(errors, size_e);
@@ -98,7 +98,7 @@ bool decoder(int* ax, int size_ax, int size_cx, int* g_x, int r) {
     }
 
 
-    //декодер проверяет остаток
+    //the decoder checks the remainder
     int* res1 = new int[(size_cx - 1) - r + 1] {0};
     division(bx, size_cx - 1, g_x, r, res1);
 
@@ -117,7 +117,7 @@ bool decoder(int* ax, int size_ax, int size_cx, int* g_x, int r) {
             check_e = 1;
     }
     if (check_e == 1 && E == 0)
-        resu = 1;//декодер ошибся
+        resu = 1;//resu = 1 if decoder mistake
     else
         resu = 0;
 
